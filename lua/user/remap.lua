@@ -26,5 +26,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>w", ":w<enter>")
 vim.keymap.set("n", "<leader>q", ":q<enter>")
 vim.keymap.set("n", "<leader>Q", ":q!<enter>")
-vim.keymap.set("n", "<C-s>s", ":LiveServerStart<enter>")
-vim.keymap.set("n", "<C-s>S", ":LiveServerStop<enter>")
