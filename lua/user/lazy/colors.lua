@@ -1,9 +1,4 @@
--- function ColorMyPencils(color)
---     color = 'onedark'
---     vim.cmd.colorscheme (color)
--- end
-
-return {
+ return {
     {
         "navarasu/onedark.nvim",
         config = function() require("onedark").setup({
@@ -26,6 +21,7 @@ return {
                 ["@keyword.import"] = {fg = "#6b5cb8"},
                 ["@keyword.function"] = {fg = "#7a6bc9"},
                 ["@keyword.conditional"] = {fg = "#6b5cb8"},
+                ["@error"] = {fg = "#bd2628"},
             }
         })
             require("onedark").load()
@@ -64,6 +60,13 @@ return {
             styles = {
                 transparency = true,
             },
+            -- highlight_groups = {
+            --     Namespace = { fg = '#a15f43' },
+            --     String = { fg = '#79a376' },
+            --     Operator = { fg = '#b5727d' },
+            --     Module = { fg = '#c4b23d' },
+            --     Variable = {fg = "#918cbd"},
+            -- },
         })
         end,
     },
