@@ -8,6 +8,7 @@ return {
         dependencies = { "rafamadriz/friendly-snippets" },
 
         config = function()
+            require("lspconfig").jdtls.setup({})
             local ls = require("luasnip")
             ls.filetype_extend("javascript", { "jsdoc" })
 

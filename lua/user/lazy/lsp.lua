@@ -11,7 +11,7 @@ return {
         "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        "j-hui/fidget.nvim",
+        -- "j-hui/fidget.nvim",
     },
     config = function()
         local cmp = require('cmp')
@@ -21,25 +21,27 @@ return {
             {},
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
-        require("fidget").setup({})
+        -- require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "lua_ls",
-                "rust_analyzer",
-                "gopls",
                 "clangd",
-                "tailwindcss",
                 "cssls",
                 "cssmodules_ls",
+                "emmet_ls",
+                "eslint",
+                "gopls",
                 "html",
                 "htmx",
-                "eslint",
-                "ts_ls",
+                "jdtls",
                 "jsonls",
-                "sqls",
-                "emmet_ls",
+                "lua_ls",
                 "marksman",
+                "phpactor",
+                "rust_analyzer",
+                "sqls",
+                "tailwindcss",
+                "ts_ls",
             },
             handlers = {
                 function(server_name)
@@ -48,23 +50,6 @@ return {
                     }
                 end,
 
-                -- Ignore if not using ZIG
-                zls = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.zls.setup({
-                        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-                        settings = {
-                            zls = {
-                                enable_inlay_hints = true,
-                                enable_snippets = true,
-                                warn_style = true,
-                            },
-                        },
-                    })
-                    vim.g.zig_fmt_parse_errors = 0
-                    vim.g.zig_fmt_autosave = 0
-
-                end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
@@ -82,6 +67,7 @@ return {
             }
         })
 
+        -- Snippet
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -91,7 +77,7 @@ return {
 
             mapping = cmp.mapping.preset.insert({
                 ['<Enter>'] = cmp.mapping.confirm({ select = true }),
-                ["<Tab><Space>"] = cmp.mapping.complete(),
+                ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },

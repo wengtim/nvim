@@ -9,7 +9,10 @@ return {
         "eandrju/cellular-automaton.nvim"
     },
 
-
-    print("nobber back")
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true,
+    },
 }
 
