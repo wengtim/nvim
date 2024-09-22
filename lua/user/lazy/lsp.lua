@@ -34,7 +34,7 @@ return {
                 "html",
                 "htmx",
                 "eslint",
-                "tsserver",
+                "ts_ls",
                 "jsonls",
                 "marksman",
                 "sqls",
