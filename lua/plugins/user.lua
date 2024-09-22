@@ -11,20 +11,12 @@ return {
   "nvim-lua/plenary.nvim",
 
   -- Other
-  "mbbill/undotree",
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
-
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      opts.section.header.val = {}
-      return opts
+    config = function()
+      require("lsp_signature").setup()
     end,
   },
 }
