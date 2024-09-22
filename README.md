@@ -1,1 +1,1 @@
-# Astronvim COnfig
+# Astronvim Config
