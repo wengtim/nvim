@@ -1,1 +1,1 @@
-# do yourself
+# Astronvim COnfig
