@@ -46,6 +46,17 @@ autocmd('LspAttach', {
     end
 })
 
+autocmd("VimEnter", {
+    group = user,
+    pattern = "LazyLoads",
+    callback = function()
+        vim.cmd("Lazy check")
+        vim.cmd("Lazy sync")
+        vim.cmd("Lazy update")
+        vim.cmd("Lazy clean")
+    end,
+})
+
 vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_banner = 0
