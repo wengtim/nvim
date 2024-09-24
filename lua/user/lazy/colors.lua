@@ -28,17 +28,6 @@
         end,
     },
     {
-        'AlexvZyl/nordic.nvim',
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require ('nordic').setup({
-                transparent_bg = true,
-            })
-        end
-    },
-
-    {
         "olimorris/onedarkpro.nvim",
         config = function()
             require("onedarkpro").setup({
