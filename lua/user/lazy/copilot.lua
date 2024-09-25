@@ -3,10 +3,10 @@ return {
         "Exafunction/codeium.vim",
         config = function()
             vim.g.codeium_enabled = true
-            vim.keymap.set("i", "<C-Space>", function() return vim.fn['codeium#Accept']() end, { expr = true })
-            vim.keymap.set("i", "<C-w>", function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-            vim.keymap.set("i", "<C-b>", function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-            vim.keymap.set("i", "<C-x>", function() return vim.fn['codeium#Clear']() end, { expr = true })
+            vim.keymap.set("i", "<Tab>", function() return vim.fn['codeium#Accept']() end, { expr = true }, {desc = "Accept codeium suggestion"})
+            vim.keymap.set("i", "<C-w>", function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true }, {desc = "Cycle next codeium suggestions"})
+            vim.keymap.set("i", "<C-b>", function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true }, {desc = "Cycle previous codeium suggestions"})
+            vim.keymap.set("i", "<C-x>", function() return vim.fn['codeium#Clear']() end, { expr = true }, {desc = "Clear codeium suggestions"})
         end,
     },
 
@@ -16,7 +16,7 @@ return {
         config = function()
             require('tabnine').setup({
                 disable_auto_comment = true,
-                accept_keymap = "<C-Space>",
+                accept_keymap = "<Tab>",
                 dismiss_keymap = "<C-c>",
                 debounce_ms = 800,
                 suggestion_color = { gui = "#808080", cterm = 244 },

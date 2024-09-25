@@ -7,7 +7,7 @@ return{
             "LiveStopServer",
         }
     })
-        vim.keymap.set("n", "<C-s>s", ":LiveServerStart<enter>")
-        vim.keymap.set("n", "<C-s>S", ":LiveServerStop<enter>")
+        vim.keymap.set("n", "<C-s>s", ":LiveServerStart<enter>", {desc = "Start live server"})
+        vim.keymap.set("n", "<C-s>S", ":LiveServerStop<enter>", {desc = "Stop live server"})
     end
 }
