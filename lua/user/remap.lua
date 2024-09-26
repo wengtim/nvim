@@ -28,4 +28,5 @@ vim.keymap.set("n", "<leader>c", vim.cmd.close, { desc = "Close Buffer" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "No operation" })
 vim.keymap.set("n", "q", "<nop>", { desc = "No operation" })
-vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Format code" })
+vim.keymap.set("n", "<leader>fm",  vim.lsp.buf.format, { desc = "Format code" })
+vim.keymap.set("n", "==", "ggVG=", { desc = "Format Code" })
