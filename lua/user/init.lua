@@ -50,9 +50,9 @@ autocmd('VimEnter', {
     group = augroup("LazyAutocmdGroup", { clear = true }),
     callback = function()
         vim.defer_fn(function()
-            vim.cmd("Lazy check")
             vim.cmd("Lazy update")
             vim.cmd("Lazy sync")
+            vim.cmd("Lazy check")
             vim.cmd("Lazy clean")
         end, 100)
     end,
