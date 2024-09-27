@@ -29,12 +29,10 @@ return {
             ensure_installed = {
                 "clangd",
                 "cssls",
-                "cssmodules_ls",
                 "emmet_ls",
                 "eslint",
                 "gopls",
                 "html",
-                "htmx",
                 "jdtls",
                 "jsonls",
                 "lua_ls",
@@ -100,6 +98,12 @@ return {
                 header = "",
                 prefix = "",
             },
+        })
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = {"html", "css"},
+            callback = function()
+                vim.b.format_on_save = false
+            end,
         })
     end
 }
