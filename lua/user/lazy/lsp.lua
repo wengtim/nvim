@@ -44,6 +44,7 @@ return {
                 "sqls",
                 "tailwindcss",
                 "ts_ls",
+                "vimls",
             },
             handlers = {
                 function(server_name)
