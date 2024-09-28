@@ -16,7 +16,6 @@ return {
                 "html",
                 "python",
                 "sql",
-                "swift",
                 "markdown",
             },
 

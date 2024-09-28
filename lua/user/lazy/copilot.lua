@@ -11,6 +11,17 @@ return {
     },
 
     -- {
+    --     "zbirenbaum/copilot.lua",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = { enabled = true },
+    --             panel = { enabled = true },
+    --         })
+    --     end,
+    -- },
+
+    -- {
     --     "codota/tabnine-nvim",
     --     build = "./dl_binaries.sh",
     --     config = function()
