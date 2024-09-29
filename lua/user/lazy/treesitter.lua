@@ -1,8 +1,18 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+
+    dependencies = {
+        "nvim-treesitter/playground",
+    },
+
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
+            playground = {
+                enable = true,
+                updatetime = 25,
+                persist_queries = false,
+            },
             ensure_installed = {
                 "c",
                 "css",
@@ -43,5 +53,7 @@ return {
         }
 
         vim.treesitter.language.register("templ", "templ")
+
+        vim.keymap.set("n", "<leader>t", "<cmd>TSHighlightCapturesUnderCursor<CR>", { desc = "Find type under cursor" })
     end
 }

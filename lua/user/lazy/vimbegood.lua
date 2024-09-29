@@ -8,9 +8,4 @@ return {
 
         config = function() end
     },
-
-    {
-        "theprimeagen/vim-with-me",
-        config = function() end
-    },
 }

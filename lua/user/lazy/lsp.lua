@@ -66,6 +66,14 @@ return {
             }
         })
 
+        -- Colorscheme problem
+        require("lspconfig").jdtls.setup({
+            on_attach = function(client)
+                client.server_capabilities.semanticTokensProvider = nil
+                -- vim.cmd("colorscheme onedark")
+            end
+        })
+
         -- Snippet
         cmp.setup({
             snippet = {

@@ -11,17 +11,6 @@ return {
     },
 
     -- {
-    --     "zbirenbaum/copilot.lua",
-    --     event = "InsertEnter",
-    --     config = function()
-    --         require("copilot").setup({
-    --             suggestion = { enabled = true },
-    --             panel = { enabled = true },
-    --         })
-    --     end,
-    -- },
-
-    -- {
     --     "codota/tabnine-nvim",
     --     build = "./dl_binaries.sh",
     --     config = function()
@@ -35,6 +24,17 @@ return {
     --             log_file_path = nil,
     --         })
     --         vim.cmd("TabnineDisable")
+    --     end,
+    -- },
+
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = { enabled = true },
+    --             panel = { enabled = true },
+    --         })
     --     end,
     -- },
 }
