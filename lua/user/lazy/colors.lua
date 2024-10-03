@@ -32,6 +32,7 @@ return
                   ["@variable"] = { fg = "#b6d0fa" },
                   ["@variable.builtin"] = { fg = "lightred" },
                   ["@variable.call"] = { fg = "lightred" },
+                  ["@variable.member"] = { fg = "#b6d0fa" },
 
                   ["@type"] = { fg = "lightorange", fmt = "bold" },
                   ["@type.builtin"] = { fg = "lightorange", fmt = "bold" },
@@ -44,6 +45,10 @@ return
                   ["@punctuation"] = { fg = "#1c2926" },
                   ["@repeat"] = { fg = "lightred" },
                   ["@string"] = { fg = "#79a376" },
+
+                  ["@none"] = { fg = "#72a694" },
+                  ["@tag"] = { fg = "#cc647e" },
+                  ["@tag.delimiter"] = { fg = "#cc647e" },
 
                   ["@warning"] = { fg = "#ccbd5e" },
                }

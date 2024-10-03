@@ -15,10 +15,9 @@ return {
             vim.keymap.set('n', '<leader>fg', builtin.git_files, {}, {desc = "Find git files"})
             vim.keymap.set('n', '<leader>fk', builtin.keymaps, {}, {desc = "Find keymaps"})
             vim.keymap.set('n', '<leader>fw', builtin.live_grep, {desc = "Find word"})
-            vim.keymap.set('n', '<leader>fh', builtin.highlights, {}, {desc = "Find highlight"})
+         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {}, {desc = "Find help"})
             vim.keymap.set('n', '<leader>fc', builtin.commands, {}, {desc = "Find command"})
             vim.keymap.set('n', '<leader>fu', "<cmd>Telescope undo<cr>", {desc = "Find undo history"})
-            vim.keymap.set('n', '<leader>fp', builtin.help_tags, {}, {desc = "Find help"})
             vim.keymap.set('n', '<leader>fo', builtin.vim_options, {}, {desc = "Find options"})
         end
     },
