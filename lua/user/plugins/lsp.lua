@@ -22,7 +22,6 @@ return {
          vim.lsp.protocol.make_client_capabilities(),
          cmp_lsp.default_capabilities())
 
-      -- require("lspconfig.health").check()
       require("fidget").setup({
          notification = { window = { winblend = 0 } },
       })
@@ -81,7 +80,7 @@ return {
       cmp.setup({
          snippet = {
             expand = function(args)
-               require('luasnip').lsp_expand(args.body)      -- For `luasnip` users.
+               require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
             end,
          },
 
@@ -91,7 +90,7 @@ return {
          }),
          sources = cmp.config.sources({
             { name = 'nvim_lsp' },
-            { name = 'luasnip' },     -- For luasnip users.
+            { name = 'luasnip' }, -- For luasnip users.
          }, {
             { name = 'buffer' },
          })
