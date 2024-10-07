@@ -5,7 +5,7 @@ return {
         "nvim-treesitter/playground",
     },
 
-    build = ":TSUpdate",
+    -- build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
             playground = {
