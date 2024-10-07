@@ -21,12 +21,16 @@ return {
          {},
          vim.lsp.protocol.make_client_capabilities(),
          cmp_lsp.default_capabilities())
+
+      -- require("lspconfig.health").check()
       require("fidget").setup({
          notification = { window = { winblend = 0 } },
       })
       require("mason").setup()
       require("mason-lspconfig").setup({
          ensure_installed = {
+            "asm_lsp",
+            "bashls",
             "clangd",
             "cssls",
             "emmet_ls",
@@ -41,7 +45,6 @@ return {
             "sqls",
             "ts_ls",
             "vimls",
-            "zls",
          },
          handlers = {
             function(server_name)
@@ -78,7 +81,7 @@ return {
       cmp.setup({
          snippet = {
             expand = function(args)
-               require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+               require('luasnip').lsp_expand(args.body)      -- For `luasnip` users.
             end,
          },
 
@@ -88,10 +91,10 @@ return {
          }),
          sources = cmp.config.sources({
             { name = 'nvim_lsp' },
-            { name = 'luasnip' }, -- For luasnip users.
+            { name = 'luasnip' },     -- For luasnip users.
          }, {
-               { name = 'buffer' },
-            })
+            { name = 'buffer' },
+         })
       })
 
       vim.diagnostic.config({
@@ -106,7 +109,7 @@ return {
          },
       })
       vim.api.nvim_create_autocmd("FileType", {
-         pattern = {"html", "css"},
+         pattern = { "html", "css" },
          callback = function()
             vim.b.format_on_save = false
          end,
