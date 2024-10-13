@@ -1,5 +1,4 @@
 -- cc to commit
-
 return {
    "tpope/vim-fugitive",
    config = function()
