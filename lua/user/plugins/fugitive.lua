@@ -4,7 +4,7 @@ return {
    "tpope/vim-fugitive",
    config = function()
       -- Open Git Status
-      vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+      vim.keymap.set("n", "<leader>gs", vim.cmd.Git, {desc = "Open Git Status"})
 
       local user_fugitive = vim.api.nvim_create_augroup("user_fugitive", {})
       local autocmd = vim.api.nvim_create_autocmd
@@ -20,7 +20,7 @@ return {
             local opts = { buffer = bufnr, remap = false }
             vim.keymap.set("n", "<leader>gp", function()
                vim.cmd.Git('push')
-            end, opts)
+            end, opts, { desc = "Git push" })
 
             -- rebase always
             vim.keymap.set("n", "<leader>gP", function()
