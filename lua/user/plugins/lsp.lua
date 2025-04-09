@@ -66,6 +66,26 @@ return {
                   }
                }
             end,
+
+            ["efm"] = function()
+               local lspconfig = require("lspconfig")
+               lspconfig.efm.setup({
+                  capabilities = capabilities,
+                  init_options = { documentFormatting = true },
+                  filetypes = { "python" },
+                  settings = {
+                     rootMarkers = { ".git/" },
+                     languages = {
+                        python = {
+                           {
+                              formatCommand = "ruff format --stdin-filename ${INPUT} -",
+                              formatStdin = true,
+                           },
+                        },
+                     },
+                  },
+               })
+            end,
          }
       })
 
