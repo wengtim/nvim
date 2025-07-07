@@ -27,7 +27,6 @@ vim.keymap.set("n", "<leader>Q", function() vim.cmd("q!") end, { desc = "Quit wi
 vim.keymap.set("n", "<leader>c", vim.cmd.close, { desc = "Close Buffer" })
 
 vim.keymap.set("n", "Q", "<nop>", { desc = "No operation" })
-vim.keymap.set("n", "q", "<nop>", { desc = "No operation" })
 vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Format code" })
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })
