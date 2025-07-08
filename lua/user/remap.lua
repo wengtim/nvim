@@ -26,6 +26,8 @@ vim.keymap.set("n", "<leader>q", vim.cmd.q, { desc = "Quit" })
 vim.keymap.set("n", "<leader>Q", function() vim.cmd("q!") end, { desc = "Quit without saving" })
 vim.keymap.set("n", "<leader>c", vim.cmd.close, { desc = "Close Buffer" })
 
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 vim.keymap.set("n", "Q", "<nop>", { desc = "No operation" })
 vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Format code" })
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
