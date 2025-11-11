@@ -14,7 +14,6 @@ return {
 		"j-hui/fidget.nvim",
 	},
 	config = function()
-		package.loaded["lspconfig"] = vim.lsp.config
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
@@ -30,14 +29,12 @@ return {
 		require("mason").setup()
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"asm_lsp",
 				"bashls",
 				"clangd",
 				"cssls",
 				"emmet_ls",
 				"gopls",
 				"html",
-				"jdtls",
 				"jsonls",
 				"lua_ls",
 				"marksman",
@@ -49,13 +46,13 @@ return {
 			},
 			handlers = {
 				function(server_name)
-					vim.lsp.config[server_name].setup({
+					require("lspconfig")[server_name].setup({
 						capabilities = capabilities,
 					})
 				end,
 
 				["lua_ls"] = function()
-					vim.lsp.config.lua_ls.setup({
+          require("lspconfig").lua_ls.setup({
 						capabilities = capabilities,
 						settings = {
 							Lua = {
@@ -69,7 +66,7 @@ return {
 				end,
 
 				["efm"] = function()
-					vim.lsp.config.efm.setup({
+          require("lspconfig").efm.setup({
 						capabilities = capabilities,
 						init_options = { documentFormatting = true },
 						filetypes = { "python" },
@@ -89,11 +86,6 @@ return {
 			},
 		})
 
-		-- vim.lsp.config.jdtls.setup({
-		--   on_attach = function(client)
-		--     client.server_capabilities.semanticTokensProvider = nil
-		--   end,
-		-- })
 
 		-- Snippet
 		cmp.setup({
