@@ -12,6 +12,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+    "mfussenegger/nvim-jdtls",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -43,16 +44,19 @@ return {
 				"sqls",
 				"ts_ls",
 				"vimls",
+				"jdtls",
 			},
 			handlers = {
 				function(server_name)
-					require("lspconfig")[server_name].setup({
-						capabilities = capabilities,
-					})
+					if server_name ~= "jdtls" then
+						require("lspconfig")[server_name].setup({
+							capabilities = capabilities,
+						})
+					end
 				end,
 
 				["lua_ls"] = function()
-          require("lspconfig").lua_ls.setup({
+					require("lspconfig").lua_ls.setup({
 						capabilities = capabilities,
 						settings = {
 							Lua = {
@@ -66,7 +70,7 @@ return {
 				end,
 
 				["efm"] = function()
-          require("lspconfig").efm.setup({
+					require("lspconfig").efm.setup({
 						capabilities = capabilities,
 						init_options = { documentFormatting = true },
 						filetypes = { "python" },
@@ -85,7 +89,6 @@ return {
 				end,
 			},
 		})
-
 
 		-- Snippet
 		cmp.setup({
@@ -124,5 +127,24 @@ return {
 				vim.b.format_on_save = false
 			end,
 		})
+
+		local jdtls = require("jdtls")
+		local home = os.getenv("HOME")
+		local workspace_folder = home .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
+		local jdtls_config = {
+			cmd = { "jdtls" },
+			root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
+			capabilities = capabilities,
+			workspace_dir = workspace_folder,
+		}
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "java",
+			callback = function()
+				jdtls.start_or_attach(jdtls_config)
+			end,
+		})
+
 	end,
 }
