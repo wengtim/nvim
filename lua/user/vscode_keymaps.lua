@@ -1,7 +1,8 @@
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
-vim.keymap.set("n", "<leader>ee", vim.cmd.Ex, { desc = "Open File Explorer" })
+vim.keymap.set({"n", "v"}, "<leader>y", '"+y')
+vim.keymap.set({"n", "v"}, "<leader>p", '"+p')
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move up" })
