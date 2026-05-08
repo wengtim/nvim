@@ -1,14 +1,14 @@
 return {
-    {
-        "Exafunction/codeium.vim",
-        config = function()
-            vim.g.codeium_enabled = true
-            vim.keymap.set("i", "<Tab>", function() return vim.fn['codeium#Accept']() end, { expr = true }, {desc = "Accept codeium suggestion"})
-            vim.keymap.set("i", "<C-f>", function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true }, {desc = "Cycle next codeium suggestions"})
-            vim.keymap.set("i", "<C-b>", function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true }, {desc = "Cycle previous codeium suggestions"})
-            vim.keymap.set("i", "<C-x>", function() return vim.fn['codeium#Clear']() end, { expr = true }, {desc = "Clear codeium suggestions"})
-        end,
-    },
+    -- {
+    --     "Exafunction/codeium.vim",
+    --     config = function()
+    --         vim.g.codeium_enabled = true
+    --         vim.keymap.set("i", "<Tab>", function() return vim.fn['codeium#Accept']() end, { expr = true }, {desc = "Accept codeium suggestion"})
+    --         vim.keymap.set("i", "<C-f>", function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true }, {desc = "Cycle next codeium suggestions"})
+    --         vim.keymap.set("i", "<C-b>", function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true }, {desc = "Cycle previous codeium suggestions"})
+    --         vim.keymap.set("i", "<C-x>", function() return vim.fn['codeium#Clear']() end, { expr = true }, {desc = "Clear codeium suggestions"})
+    --     end,
+    -- },
 
     -- {
     --     "codota/tabnine-nvim",
